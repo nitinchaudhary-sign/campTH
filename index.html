@@ -208,7 +208,7 @@ $('adminAttendanceEmpty')?.classList.toggle('hidden',shown!==0);
 }
 function renderPage(page){const isStudent=currentRole==='student',isTeacher=currentRole==='teacher',isAdmin=currentRole==='admin';let title='',sub='',body='';
 if(page==='overview'){
-title=`Good ${new Date().getHours()<12?'morning':new Date().getHours()<17?'afternoon':'evening'}, `${(campthProfile?.display_name || names[currentRole]).split(' ')[0]}``;sub='Here is your campus snapshot for today.';
+title=`Good ${new Date().getHours()<12?'morning':new Date().getHours()<17?'afternoon':'evening'}, `${names[currentRole].split(' ')[0]}``;sub='Here is your campus snapshot for today.';
 if(hostelOnlyRoles.includes(currentRole)){
 body=`<div class="stats">${stat('Open hostel issues','3','Sample maintenance tickets')}${stat('Residents','620','Demo hostel records')}${stat('Wardens on duty','8','Sample roster')}${stat('Mess issues','3','Demo issue log')}</div><div class="two-col"><div class="panel"><h2>Hostel operations</h2><div class="notice"><strong>Water leakage · Boys Hostel B-204</strong><small>High priority · In progress</small></div><div class="notice"><strong>Corridor light · Girls Hostel G-112</strong><small>Assigned to maintenance</small></div></div><div class="panel"><h2>Staff workspace</h2><p class="hint">This portal shows hostel or mess operations only. Academic attendance, assignments, class timetable, grades, library and fee records are hidden for hostel staff roles.</p></div></div>`;
 }else{
